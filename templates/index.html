@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block body  %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{url_for('static', filename='assets/img/home-bg.jpg')}}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Code guru</h1>
+                            <span class="subheading">A Blog by tejaswi programmers </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <h3 style="display: block;margin-left: 15px;"> Please Login To Your Account: </h3>
+        <a href="/login" style="display: block;margin-left: 65px;
+            " ><button class="btn btn-primary">Login</button></a>
+
+        <hr>
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+                    <h1 style="color: Blue;"      >Trending Tech Posts :</h1>
+
+                    {% for post2 in posts %}
+                    <div class="post-preview">
+                        <a href="/post/{{post2.slung}}">
+                            <h2 class="post-title">{{post2.title}}</h2>
+                            <h3> {{post2.tagline}}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by {{post2.user}}
+                            on September 24, 2021
+                        </p>
+                    </div>
+                    {% endfor %}
+                    <!-- Divider-->
+                    
+                    <!-- Divider-->
+                    
+                    <!-- Divider-->
+                    
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Pager-->
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="/olderpost">Older Posts →</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+     
+{% endblock %}

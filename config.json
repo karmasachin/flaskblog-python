@@ -1,0 +1,16 @@
+{
+	"params":
+	{
+     "local_server": "True",
+     "local_url":"mysql://root:@localhost/codeguru",
+     "fb_url":"https://facebook.com",
+     "tw_url":"https://twitter.com",
+     "gt_url":"https://github.com",
+     "no_of_post": 2,
+     "user_name":"sachin",
+     "password":"Karma"
+
+
+	
+	}
+}

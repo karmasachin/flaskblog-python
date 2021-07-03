@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block body  %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{url_for('static', filename='assets/img/about-bg.jpg')}}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Welcome {{para['user_name']}} </h1>
+                            <span class="subheading">A Blog by tejaswi programmers </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+h2{
+    margin-left: 15px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<h2 style="display: block;margin-left: 32px;"> ADD posts here :</h2>
+<a href="/edit/0" style="display: block;margin-left: 65px;
+" ><button class="btn btn-primary">ADD POST</button></a>
+<h2 style="display: block;margin-left: 267px;"> Log Out From here :</h2>
+<a href="/logout" style="display: block;margin-left: 65px;
+" ><button class="btn btn-primary">Log Out</button></a>
+<h2 style="display: block;margin-left: 32px;"> Your posts details :</h2>
+<hr>
+<table>
+  <tr>
+    <th> sno </th>
+    <th>title</th>
+    <th>tagline</th>
+    <th>img_file</th>
+    <th>Edit</th>
+    <th>Delete</th>
+
+  </tr>
+  {% for post in posts %}
+  <tr>
+
+    <td>{{post.sno}}</td>
+    <td>{{post.title}}</td>
+    <td>{{post.tagline}}</td>
+    <td>{{post.img_file}}</td>
+    <td><a href="/edit/{{post.sno}}" ><button class="btn btn-primary">Edit</button></a></td>
+    <td><a href="/delete/{{post.sno}}"><button class="btn btn-primary">Delete</button></a></td>
+  </tr>
+
+  {% endfor %}
+  
+</table>
+
+</body>
+</html>
+
+
+
+
+
+{% endblock %}
